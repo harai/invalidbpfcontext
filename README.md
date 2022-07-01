@@ -88,6 +88,8 @@ $ bpftool btf dump file /sys/kernel/btf/vmlinux format raw
 
 #### Result
 
+Error occurred.
+
 ```
 $ sudo ./output
 2022/07/01 03:25:43 loading objects: field FentrySyscall: program fentry_syscall: load program: permission denied: invalid bpf_context access off=0 size=8 (5 line(s) omitted)
@@ -116,6 +118,8 @@ $ bpftool btf dump file /sys/kernel/btf/vmlinux format raw
 ```
 
 #### Result
+
+Error occurred.
 
 ```
 $ sudo ./output
@@ -170,6 +174,8 @@ $ bpftool btf dump file /sys/kernel/btf/vmlinux format raw
 ```
 
 #### Result
+
+No errors occur.
 
 ```
 $ sudo ./output
