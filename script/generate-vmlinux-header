@@ -1,0 +1,3 @@
+#!/bin/bash -eu
+
+exec bpftool btf dump file /sys/kernel/btf/vmlinux format c > c/headers/vmlinux.h
