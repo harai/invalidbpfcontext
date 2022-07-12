@@ -21,13 +21,13 @@ func Run() {
 
 	objs := bpfObjects{}
 	if err := loadBpfObjects(&objs, nil); err != nil {
-		log.Fatalf("loading objects: %v", err)
+		log.Fatalf("loading objects: %+v", err)
 	}
 	defer objs.Close()
 
 	tracing, err := link.AttachTracing(link.TracingOptions{Program: objs.FentrySyscall})
 	if err != nil {
-		log.Fatalf("attaching tracing: %v", err)
+		log.Fatalf("attaching tracing: %+v", err)
 	}
 	defer tracing.Close()
 
