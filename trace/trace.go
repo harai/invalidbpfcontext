@@ -4,6 +4,7 @@
 package trace
 
 import (
+	"errors"
 	"log"
 	"time"
 
@@ -21,6 +22,15 @@ func Run() {
 
 	objs := bpfObjects{}
 	if err := loadBpfObjects(&objs, nil); err != nil {
+		if err2 := errors.Unwrap(err); err2 != nil {
+			if err3 := errors.Unwrap(err2); err3 != nil {
+				if err4 := errors.Unwrap(err3); err4 != nil {
+					log.Printf("loading objects: %+v", err4)
+				}
+				log.Printf("loading objects: %+v", err3)
+			}
+			log.Printf("loading objects: %+v", err2)
+		}
 		log.Fatalf("loading objects: %+v", err)
 	}
 	defer objs.Close()
