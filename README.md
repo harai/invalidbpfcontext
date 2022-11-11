@@ -1,3 +1,9 @@
+**This issue has been fixed in Linux 5.15.78.**
+
+* https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.78
+
+---
+
 # `invalid bpf_context access` error on some distributions
 
 `invalid bpf_context access` error occurs on some distributions when trying to read parameters passed to the syscall traced with fentry/fexit:
